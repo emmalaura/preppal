@@ -5,7 +5,6 @@ import './App.css';
 
 function QuestionnairePage({ setRecipes }) {
     const [name, setName] = useState('');
-    const [budget, setBudget] = useState('');
     const [dietaryRestrictions, setDietaryRestrictions] = useState('');
     const [timeRestrictions, setTimeRestrictions] = useState('');
     const [error, setError] = useState(null);
@@ -60,16 +59,6 @@ function QuestionnairePage({ setRecipes }) {
                             value={name} 
                             onChange={(e) => setName(e.target.value)} 
                             required 
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="budget">What’s your budget?</label>
-                        <input 
-                            type="text" 
-                            id="budget" 
-                            value={budget} 
-                            onChange={(e) => setBudget(e.target.value)} 
-                            placeholder="Optional" 
                         />
                     </div>
                     <div className="form-group">
