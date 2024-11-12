@@ -10,7 +10,8 @@ function ResourcesPage() {
         <div className="features">
           <div className="feature-item">
             <h3>Food Banks</h3>
-            <p>Find local food banks and community resources. Check out <a href="https://www.feedingamerica.org/find-your-local-foodbank" target="_blank" rel="noopener noreferrer">Feeding America's local food bank locator</a> to find a food bank near you.</p>
+            <p>Find local food banks and community resources. Check out </p>
+            <li><a href="https://www.feedingamerica.org/find-your-local-foodbank" target="_blank" rel="noopener noreferrer">Feeding America's local food bank locator</a> to find a food bank near you.</li>
           </div>
           <div className="feature-item">
             <h3>Coupon Websites</h3>
