@@ -12,7 +12,7 @@ function QuestionnairePage({ setRecipes }) {
     const navigate = useNavigate();
 
     const SHEET_ID = '1Z0oCtcbhaZR_BwIgbZIuCfP_oC57StjMHOEnzX9le4k';
-    const API_KEY = 'AIzaSyAwacBJ9-23HLPz7HhgXMgL-U_t2apJjHo';
+    const API_KEY = process.env.REACT_APP_API_KEY;
 
     const fetchData = async () => {
         try {
