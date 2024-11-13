@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+
 
 function ResourcesPage() {
   return (
@@ -10,8 +10,12 @@ function ResourcesPage() {
         <div className="features">
           <div className="feature-item">
             <h3>Food Banks</h3>
-            <p>Find local food banks and community resources. Check out </p>
-            <li><a href="https://www.feedingamerica.org/find-your-local-foodbank" target="_blank" rel="noopener noreferrer">Feeding America's local food bank locator</a> to find a food bank near you.</li>
+            <p>Find local food banks and community resources: </p>
+            <ul>
+              <li><a href="https://www.feedingamerica.org/find-your-local-foodbank" target="_blank" rel="noopener noreferrer">Feeding America's local food bank locator</a> </li>
+              <li><a href="https://foodfinder.us/" target="_blank" rel="noopener noreferrer"> Food Finder </a> </li>
+              <li><a href="https://www.hud.gov/findshelter/foodpantries" target="_blank" rel="noopener noreferrer"> U.S. Department of Housing and Urban Development </a></li>
+            </ul>
           </div>
           <div className="feature-item">
             <h3>Coupon Websites</h3>
