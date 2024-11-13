@@ -12,7 +12,7 @@ function QuestionnairePage({ setRecipes }) {
     const navigate = useNavigate();
 
     const SHEET_ID = '1Z0oCtcbhaZR_BwIgbZIuCfP_oC57StjMHOEnzX9le4k';
-    const API_KEY = process.env.REACT_APP_API_KEY;
+    const API_KEY = 'AIzaSyAwacBJ9-23HLPz7HhgXMgL-U_t2apJjHo';
 
     const fetchData = async () => {
         try {
@@ -20,13 +20,24 @@ function QuestionnairePage({ setRecipes }) {
                 `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/Sheet1?key=${API_KEY}`
             );
             const rows = response.data.values;
-
-            // Filter and select recipes as per user’s dietary restrictions
+    
+            // Convert timeRestrictions to a number (in minutes)
+            const maxTime = timeRestrictions ? parseInt(timeRestrictions, 10) : null;
+    
+            // Filter recipes based on dietary restrictions and time
             const filteredRecipes = rows.filter(row => {
                 const category = row[3];
-                return !dietaryRestrictions || category === dietaryRestrictions;
+                const totalTime = row[1]; // Assuming total time is in minutes here
+                
+                // Check if recipe meets dietary restrictions
+                const meetsDietary = !dietaryRestrictions || category === dietaryRestrictions;
+    
+                // Check if recipe meets time restriction
+                const meetsTime = !maxTime || (parseInt(totalTime, 10) <= maxTime);
+    
+                return meetsDietary && meetsTime;
             }).slice(0, 7);
-
+    
             setRecipes(filteredRecipes); // Update recipes state in App.js
             setError(null); // Clear any errors
             navigate('/recipes'); // Redirect to RecipePage
@@ -35,7 +46,7 @@ function QuestionnairePage({ setRecipes }) {
             setError('Failed to fetch data. Please try again.');
         }
     };
-
+    
     const handleSubmit = (event) => {
         event.preventDefault();
         fetchData();
