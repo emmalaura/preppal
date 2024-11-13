@@ -1,11 +1,17 @@
 /* General Styles */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   background-color: #f2f4f5;
-  color: #333;
+  color: var(--text-color);
+}
+
+:root {
+  --primary-color: #3498db; /* Modern teal-blue */
+  --accent-color: #2ecc71;  /* Fresh green */
+  --text-color: #333;
 }
 
 a {
@@ -17,11 +23,12 @@ a {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 /* Hero Section */
 .hero {
-  background-color: #6fbb73;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
   color: white;
   padding: 60px 20px;
   border-radius: 10px;
@@ -42,19 +49,21 @@ a {
 
 .cta-button {
   margin-top: 30px;
-  padding: 15px 40px;
-  background-color: #4caf50;
+  padding: 12px 30px;
+  background-color: var(--accent-color);
   color: white;
   border: none;
-  border-radius: 30px;
+  border-radius: 50px;
   font-size: 1.2rem;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .cta-button:hover {
   background-color: #43a047;
   transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Purpose Section */
@@ -63,12 +72,14 @@ a {
   padding: 20px;
   background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 .purpose h2 {
   font-size: 2rem;
-  color: #4caf50;
+  color: var(--primary-color);
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .purpose p {
@@ -82,25 +93,26 @@ a {
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
+  gap: 15px;
 }
 
 .feature-item {
   flex: 1;
-  padding: 15px;
-  margin: 0 10px;
-  background-color: #fafafa;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .feature-item:hover {
-  transform: translateY(-5px);
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .feature-item h3 {
   font-size: 1.3rem;
-  color: #4caf50;
+  color: var(--accent-color);
 }
 
 .feature-item p {
@@ -114,12 +126,14 @@ a {
   padding: 20px;
   background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 .form-section h2 {
   font-size: 2rem;
-  color: #4caf50;
+  color: var(--primary-color);
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .form-group {
@@ -140,32 +154,33 @@ a {
   padding: 12px;
   font-size: 1.1rem;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 8px;
   background-color: #f9f9f9;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-group input:focus,
 .form-group select:focus {
-  border-color: #4caf50;
+  border-color: var(--accent-color);
   box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
 }
 
 .submit-button {
   margin-top: 20px;
-  padding: 15px 40px;
-  background-color: #4caf50;
+  padding: 12px 30px;
+  background-color: var(--accent-color);
   color: white;
   border: none;
-  border-radius: 30px;
+  border-radius: 50px;
   font-size: 1.2rem;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .submit-button:hover {
   background-color: #43a047;
   transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Recipe Section */
@@ -185,12 +200,13 @@ a {
   background-color: #ffffff;
   border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .recipe-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
 }
 
 .recipe-image {
@@ -213,7 +229,7 @@ a {
 }
 
 .recipe-card a {
-  color: #4caf50;
+  color: var(--accent-color);
   font-weight: bold;
 }
 
@@ -232,10 +248,26 @@ a {
   }
   
   .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   
   .hero p, .purpose p {
     font-size: 1rem;
   }
+}
+
+.refresh-button {
+  padding: 10px 20px;
+  margin: 20px 0;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.refresh-button:hover {
+  background-color: var(--accent-color);
 }
