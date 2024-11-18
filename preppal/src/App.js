@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './HomePage'; // Import your HomePage component
 import QuestionnairePage from './QuestionnairePage';
 import RecipePage from './RecipePage';
+import ResourcesPage from './ResourcesPage';
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -30,6 +31,9 @@ function App() {
           path="/recipes" 
           element={<RecipePage recipes={recipes} userName={userName} />} 
         />
+
+        {/* Route for ResourcesPage */} 
+        <Route path="/resources" element={<ResourcesPage />} />
       </Routes>
     </Router>
   );
