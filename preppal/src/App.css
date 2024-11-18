@@ -376,3 +376,16 @@ a {
 .refresh-button:hover {
   background-color: var(--accent-color);
 }
+
+.resource-image {
+  width: 300px;         /* Fixed width for uniformity */
+  height: 200px;        /* Fixed height for uniformity */
+  object-fit: contain;  /* Ensure the entire image is contained within the fixed size */
+  object-position: center; /* Center the image within the container */
+  border-radius: 8px;   /* Optional: add rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for a polished look */
+  margin: 10px auto;    /* Centers the images and adds spacing */
+  display: block;       /* Makes the image block element for centering */
+}
+
+
